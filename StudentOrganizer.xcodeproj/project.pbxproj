@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		99AE49F7308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99AE49F5308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		99AE49F6308ECDF300ACB412 /* StudentOrganizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentOrganizer.xcdatamodel; sourceTree = "<group>"; };
 		99C75E8330859E050014C58A /* StudentOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +50,7 @@
 		99C75E7A30859E050014C58A = {
 			isa = PBXGroup;
 			children = (
+				99AE49F5308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld */,
 				99C75E8530859E050014C58A /* StudentOrganizer */,
 				99C75E8430859E050014C58A /* Products */,
 			);
@@ -132,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AE49F7308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +348,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		99AE49F5308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				99AE49F6308ECDF300ACB412 /* StudentOrganizer.xcdatamodel */,
+			);
+			currentVersion = 99AE49F6308ECDF300ACB412 /* StudentOrganizer.xcdatamodel */;
+			path = StudentOrganizer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 99C75E7B30859E050014C58A /* Project object */;
 }
