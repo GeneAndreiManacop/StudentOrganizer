@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		99AE49F7308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99AE49F5308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld */; };
+		EF63FC1C308ED4C00083AB73 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63FC1B308ED4C00083AB73 /* CoreDataStack.swift */; };
+		EF63FC20308ED64B0083AB73 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63FC1F308ED64B0083AB73 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		99AE49F6308ECDF300ACB412 /* StudentOrganizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentOrganizer.xcdatamodel; sourceTree = "<group>"; };
 		99C75E8330859E050014C58A /* StudentOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF63FC1B308ED4C00083AB73 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		EF63FC1F308ED64B0083AB73 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,6 +54,8 @@
 		99C75E7A30859E050014C58A = {
 			isa = PBXGroup;
 			children = (
+				EF63FC1F308ED64B0083AB73 /* Helpers.swift */,
+				EF63FC1B308ED4C00083AB73 /* CoreDataStack.swift */,
 				99AE49F5308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld */,
 				99C75E8530859E050014C58A /* StudentOrganizer */,
 				99C75E8430859E050014C58A /* Products */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF63FC20308ED64B0083AB73 /* Helpers.swift in Sources */,
+				EF63FC1C308ED4C00083AB73 /* CoreDataStack.swift in Sources */,
 				99AE49F7308ECDF300ACB412 /* StudentOrganizer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
