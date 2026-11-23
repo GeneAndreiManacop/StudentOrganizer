@@ -308,6 +308,7 @@
                     <connections>
                         <outlet property="collectionView" destination="XLO-M7-mba" id="fPs-My-Opb"/>
                         <segue destination="Rpx-fR-DMc" kind="show" identifier="ShowNoteFormSegue" id="olk-ea-OZ2"/>
+                        <segue destination="2o9-PN-e2E" kind="show" identifier="ShowNoteDetailSegue" id="ais-ke-avK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZc-bZ-x0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -389,6 +390,68 @@
             </objects>
             <point key="canvasLocation" x="4170" y="94"/>
         </scene>
+        <!--Note Detail View Controller-->
+        <scene sceneID="2Rj-gT-lkE">
+            <objects>
+                <viewController id="2o9-PN-e2E" customClass="NoteDetailViewController" customModule="StudentOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mj2-nA-FvM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-CY-SWy">
+                                <rect key="frame" x="20" y="192" width="353" height="580"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8B-cu-e0L">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="U4N-nD-4bu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJo-br-8Ox">
+                                        <rect key="frame" x="0.0" y="300" width="353" height="15.666666666666686"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kQ-s6-nbw">
+                                        <rect key="frame" x="0.0" y="315.66666666666669" width="353" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-wW-ukb">
+                                        <rect key="frame" x="0.0" y="336" width="353" height="244"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete Note">
+                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteTapped:" destination="2o9-PN-e2E" eventType="touchUpInside" id="pMG-6V-85X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="baM-Cs-WUd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qu4-CY-SWy" firstAttribute="top" secondItem="baM-Cs-WUd" secondAttribute="top" constant="20" id="0Wt-wg-afV"/>
+                            <constraint firstItem="baM-Cs-WUd" firstAttribute="bottom" secondItem="qu4-CY-SWy" secondAttribute="bottom" constant="12" id="KX7-ia-jsF"/>
+                            <constraint firstItem="baM-Cs-WUd" firstAttribute="trailing" secondItem="qu4-CY-SWy" secondAttribute="trailing" constant="20" id="bQa-xM-B3z"/>
+                            <constraint firstItem="qu4-CY-SWy" firstAttribute="leading" secondItem="baM-Cs-WUd" secondAttribute="leading" constant="20" id="dXE-gU-fWl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="77J-8u-DPV"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="zJo-br-8Ox" id="iEH-rj-u6l"/>
+                        <outlet property="noteLabel" destination="0kQ-s6-nbw" id="vKS-cA-G4G"/>
+                        <outlet property="photoImageView" destination="l8B-cu-e0L" id="5yH-S0-lhz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dV8-aJ-gzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4920" y="94"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vjj-rF-e6p">
             <objects>
@@ -412,8 +475,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
