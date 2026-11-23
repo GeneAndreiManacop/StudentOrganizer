@@ -307,11 +307,87 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="XLO-M7-mba" id="fPs-My-Opb"/>
+                        <segue destination="Rpx-fR-DMc" kind="show" identifier="ShowNoteFormSegue" id="olk-ea-OZ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZc-bZ-x0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3425" y="94"/>
+        </scene>
+        <!--Note Form View Controller-->
+        <scene sceneID="G5X-Il-Jr4">
+            <objects>
+                <viewController id="Rpx-fR-DMc" customClass="NoteFormViewController" customModule="StudentOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jws-t6-s1M">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kvz-ty-kHL">
+                                <rect key="frame" x="20" y="192" width="353" height="580"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oR-JW-UQe">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-a4-9E3">
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="353" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="kx9-f3-gqV"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLD-b0-WkR">
+                                        <rect key="frame" x="0.0" y="170.33333333333331" width="353" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POm-3q-pVp">
+                                        <rect key="frame" x="0.0" y="190.66666666666669" width="353" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Rg9-qm-Qjt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7S-A1-xsF">
+                                        <rect key="frame" x="0.0" y="390.66666666666663" width="353" height="189.33333333333337"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Choose Photo"/>
+                                        <connections>
+                                            <action selector="choosePhotoTapped:" destination="Rpx-fR-DMc" eventType="touchUpInside" id="Rla-NK-fLT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wLd-T6-Jot"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wLd-T6-Jot" firstAttribute="bottom" secondItem="kvz-ty-kHL" secondAttribute="bottom" constant="12" id="1s2-uk-dWc"/>
+                            <constraint firstItem="wLd-T6-Jot" firstAttribute="trailing" secondItem="kvz-ty-kHL" secondAttribute="trailing" constant="20" id="GTK-G8-MPj"/>
+                            <constraint firstItem="kvz-ty-kHL" firstAttribute="top" secondItem="wLd-T6-Jot" secondAttribute="top" constant="20" id="K7r-2Z-Ya0"/>
+                            <constraint firstItem="kvz-ty-kHL" firstAttribute="leading" secondItem="wLd-T6-Jot" secondAttribute="leading" constant="20" id="Uxm-pa-ASD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rgu-kW-gvV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zhg-cg-rGJ">
+                            <connections>
+                                <action selector="saveTapped:" destination="Rpx-fR-DMc" id="obP-I8-EzS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noteTextView" destination="xGg-a4-9E3" id="Fj4-AZ-gby"/>
+                        <outlet property="photoImageView" destination="POm-3q-pVp" id="1wZ-If-VdU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1f4-Bq-SNm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4170" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vjj-rF-e6p">
@@ -333,6 +409,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
